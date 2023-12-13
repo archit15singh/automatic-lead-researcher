@@ -8,5 +8,6 @@ with st.chat_message("assistant"):
 prompt = st.chat_input("Say something")
 if prompt:
     with st.chat_message("human"):
+        st.write(prompt)
         initiate_chat(prompt)
         st.write("done")
