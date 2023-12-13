@@ -76,4 +76,3 @@ def initiate_chat(task):
 
     # Initiate the chat
     user_proxy.initiate_chat(coder, message=task)
-    return True
