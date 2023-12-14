@@ -17,17 +17,18 @@ user_proxy = autogen.UserProxyAgent(
 )
 coder = autogen.AssistantAgent(
     name="Coder",
+    system_message="you are an expert code writer. generate code with no issues according to the requirements.",
     llm_config=llm_config,
 )
 pm = autogen.AssistantAgent(
     name="product_manager",
-    system_message="You will help break down the initial idea into a well scoped requirement for the coder; Do not involve in future conversations or error fixing",
+    system_message="You will help break down the initial idea into a well scoped requirement for the coder; Do not involve in future conversations or error fixing.  do it step by step",
     llm_config=llm_config,
 )
 
 critic = autogen.AssistantAgent(
     name="critic",
-    system_message="You will critique the code written by the coder to make sure all the edge cases and features are being supported.",
+    system_message="You will critique the code written by the coder to make sure all the edge cases and features are being supported. do it step by step",
     llm_config=llm_config,
 )
 
