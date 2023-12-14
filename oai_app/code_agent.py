@@ -17,7 +17,7 @@ user_proxy = autogen.UserProxyAgent(
 )
 coder = autogen.AssistantAgent(
     name="Coder",
-    system_message="you are an expert code writer. generate code with no issues according to the requirements.",
+    system_message="you are an expert python code writer. generate code with no issues according to the requirements.",
     llm_config=llm_config,
 )
 pm = autogen.AssistantAgent(
