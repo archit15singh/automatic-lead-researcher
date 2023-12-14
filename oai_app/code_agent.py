@@ -39,5 +39,5 @@ manager = autogen.GroupChatManager(groupchat=groupchat, llm_config=llm_config)
 # Start the conversation
 user_proxy.initiate_chat(
     manager,
-    message="build a calculator application with GUI in python. features should be simple as + - / *",
+    message="research about real estate and plot a chart that shows the trend in house prices in the bay area",
 )
