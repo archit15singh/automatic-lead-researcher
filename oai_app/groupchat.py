@@ -38,7 +38,7 @@ executor = autogen.UserProxyAgent(
     name="Executor",
     system_message="Executor. Execute the code written by the engineer and report the result.",
     human_input_mode="NEVER",
-    code_execution_config={"last_n_messages": 3, "work_dir": "paper"},
+    code_execution_config={"last_n_messages": 3, "work_dir": "workspace"},
 )
 critic = autogen.AssistantAgent(
     name="Critic",
