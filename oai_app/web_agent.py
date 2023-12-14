@@ -24,9 +24,14 @@ user_proxy = autogen.UserProxyAgent(
 Otherwise, reply CONTINUE, or the reason why the task is not solved yet.""",
 )
 
+# user_proxy.initiate_chat(
+#     assistant,
+#     message="""
+# Who should read this paper: https://arxiv.org/abs/2308.08155
+# """,
+# )
+
 user_proxy.initiate_chat(
     assistant,
-    message="""
-Who should read this paper: https://arxiv.org/abs/2308.08155
-""",
+    message="""Show me the YTD gain of 10 largest technology companies as of today.""",
 )
