@@ -39,5 +39,5 @@ manager = autogen.GroupChatManager(groupchat=groupchat, llm_config=llm_config)
 # Start the conversation
 user_proxy.initiate_chat(
     manager,
-    message="research about real estate and plot a chart that shows the trend in house prices in the bay area",
+    message="Given a binary tree, the task is to find the height of the tree. The height of the tree is the number of vertices in the tree from the root to the deepest node. ",
 )
