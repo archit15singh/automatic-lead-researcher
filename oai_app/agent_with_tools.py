@@ -123,7 +123,7 @@ spark = SparkSession.builder.getOrCreate()
 schema = "langchain_example"
 spark.sql(f"CREATE DATABASE IF NOT EXISTS {schema}")
 spark.sql(f"USE {schema}")
-csv_file_path = "./sample_data/california_housing_train.csv"
+csv_file_path = "/Users/architsingh/Documents/projects/automatic-lead-researcher/test/test_files/california_housing_train.csv"
 table = "california_housing_train"
 spark.read.csv(csv_file_path, header=True, inferSchema=True).write.option(
     "path",
