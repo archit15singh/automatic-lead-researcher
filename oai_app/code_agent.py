@@ -9,7 +9,7 @@ llm_config = {"config_list": config_list, "seed": 42, "timeout": 120}
 user_proxy = autogen.UserProxyAgent(
     name="User_proxy",
     system_message="A human admin who will give the idea and run the code provided by Coder.",
-    code_execution_config={"last_n_messages": 2, "work_dir": "groupchat"},
+    code_execution_config={"last_n_messages": 2, "work_dir": "workspace"},
     human_input_mode="NEVER",
 )
 coder = autogen.AssistantAgent(
