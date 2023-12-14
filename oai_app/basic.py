@@ -8,7 +8,7 @@ assistant = AssistantAgent(name="assistant", llm_config={"config_list": config_l
 
 user_proxy = UserProxyAgent(
     name="user_proxy",
-    human_input_mode="NEVER",
+    human_input_mode="ALWAYS",
     max_consecutive_auto_reply=5,
     is_termination_msg=lambda x: bool(
         re.search(r"TERMINATE\s*$", x.get("content", "").rstrip())
@@ -20,5 +20,5 @@ user_proxy = UserProxyAgent(
 
 user_proxy.initiate_chat(
     assistant,
-    message="generate a research report on this company https://www.tunecore.com/",
+    message="conduct an analysis on the best saas to build based on your own assumptions. do it step by step and show me the reasoning",
 )
