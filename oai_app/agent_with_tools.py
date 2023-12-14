@@ -89,7 +89,7 @@ user_proxy = autogen.UserProxyAgent(
     and x.get("content", "").rstrip().endswith("TERMINATE"),
     human_input_mode="NEVER",
     max_consecutive_auto_reply=10,
-    code_execution_config={"work_dir": "coding"},
+    code_execution_config={"work_dir": "workspace"},
 )
 
 # Register the tool and start the conversation
@@ -134,7 +134,7 @@ spark.table(table).show()
 # Note, you can also connect to Spark via Spark connect. For example:
 # db = SparkSQL.from_uri("sc://localhost:15002", schema=schema)
 spark_sql = SparkSQL(schema=schema)
-llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k")
+llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo")
 toolkit = SparkSQLToolkit(db=spark_sql, llm=llm)
 agent_executor = create_spark_sql_agent(llm=llm, toolkit=toolkit, verbose=True)
 
@@ -155,7 +155,7 @@ for tool in toolkit.get_tools():  # debug_toolkit if you want to use tools direc
 # Construct the llm_config
 llm_config = {
     "functions": tools,
-    "config_list": config_list,  # Assuming you have this defined elsewhere
+    "config_list": config_list_gpt,  # Assuming you have this defined elsewhere
     "timeout": 120,
 }
 
@@ -165,7 +165,7 @@ user_proxy = autogen.UserProxyAgent(
     and x.get("content", "").rstrip().endswith("TERMINATE"),
     human_input_mode="NEVER",
     max_consecutive_auto_reply=10,
-    code_execution_config={"work_dir": "coding"},
+    code_execution_config={"work_dir": "workspace"},
 )
 
 print(function_map)
