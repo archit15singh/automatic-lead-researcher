@@ -59,19 +59,20 @@ find papers on LLM applications from arxiv in the last week, create a markdown t
 """,
 )
 
-groupchat_nocritic = autogen.GroupChat(
-    agents=[user_proxy, engineer, scientist, planner, executor],
-    messages=[],
-    max_round=50,
-)
-for agent in groupchat.agents:
-    agent.reset()
-manager_nocritic = autogen.GroupChatManager(
-    groupchat=groupchat_nocritic, llm_config=gpt_config
-)
-user_proxy.initiate_chat(
-    manager_nocritic,
-    message="""
-find papers on LLM applications from arxiv in the last week, create a markdown table of different domains.
-""",
-)
+### group chat without critic to compare with critic
+# groupchat_nocritic = autogen.GroupChat(
+#     agents=[user_proxy, engineer, scientist, planner, executor],
+#     messages=[],
+#     max_round=50,
+# )
+# for agent in groupchat.agents:
+#     agent.reset()
+# manager_nocritic = autogen.GroupChatManager(
+#     groupchat=groupchat_nocritic, llm_config=gpt_config
+# )
+# user_proxy.initiate_chat(
+#     manager_nocritic,
+#     message="""
+# find papers on LLM applications from arxiv in the last week, create a markdown table of different domains.
+# """,
+# )
